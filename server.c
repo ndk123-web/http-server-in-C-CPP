@@ -99,9 +99,10 @@ int main()
     // The blank line (\r\n) after headers signals the end of headers and start of the body
     // "Hello From Server" is the body of the response
     char response[] = "HTTP/1.1 200 OK\r\n"
-                      "Content-Type: text/plain\r\n"
+                      "Content-Type: text/html\r\n"
                       "\r\n"
-                      "Hello From Server";
+                      "<!DOCTYPE html>\n"
+                      "<html> <body> <h1> Hello From Server </h1> </body> </html>\n";
     // send() transmits the response to the client
     // strlen(response) ensures only the actual response is sent (not extra memory)
     int bytes_sent = send(newClientSockerDescriptor, response, strlen(response), 0);
