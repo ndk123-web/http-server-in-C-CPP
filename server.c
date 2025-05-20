@@ -95,7 +95,7 @@ int main()
     // 7. Prepare and send an HTTP response to the client
     // HTTP/1.1 200 OK: Status line indicating success
     // Content-Type: text/plain: Tells the client the type of data being sent
-    // \r\n: Required by HTTP to end each header line
+    // \r\n: Required by HTTP o end each header line
     // The blank line (\r\n) after headers signals the end of headers and start of the body
     // "Hello From Server" is the body of the response
     char response[] = "HTTP/1.1 200 OK\r\n"
@@ -109,7 +109,7 @@ int main()
     if (bytes_sent < 0) {
         printf("Error sending response\n");
     } else {
-        printf("Response Sent to Client: \n%s\n", response);
+        printf("Response Sent to Client: \n %s \n", response);
     }
 
     // 8. Close the client socket
