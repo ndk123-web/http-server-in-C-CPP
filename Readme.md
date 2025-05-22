@@ -1,4 +1,4 @@
-```markdown
+
 # ✨ Simple C++ TCP Server Explained ✨
 
 Hey there! 👋 This document is your friendly guide to understanding a basic C++ TCP server. We'll dive deep into how socket programming works, the magic behind network layers, and the crucial role your Operating System (OS) plays in making network communication happen.
@@ -132,4 +132,3 @@ close(serverSocket);
 ## Conclusion
 
 This server example uses a basic "blocking, single-client" approach. For building more robust and scalable servers that can handle many clients at once, you'd typically explore advanced techniques like non-blocking I/O, multiplexing (using `select` or `poll`), or implementing multithreading/multiprocessing.
-```
