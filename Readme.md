@@ -62,6 +62,7 @@ listen(serverSocket, 5);
 **Internal Working:** The OS gets busy setting up two crucial "waiting rooms" (queues) for this listening socket:
 * **SYN Queue (Incomplete Connections Queue):** 🚦 This queue holds incoming connection requests (the client's initial **SYN packets**) for which the TCP 3-way handshake isn't finished yet. The server has sent its SYN-ACK, but it's still waiting for the client's final ACK.
 * **Accept Queue (Completed Connections Queue):** ✅ This queue is for connections that have successfully completed the entire 3-way handshake. These connections are fully established and are patiently waiting for your server application to pick them up using the `accept()` call.
+* **Inside All Queues there is TCB Block data structure which contains All Segments and all information about clients
 
 `5` (Backlog): This number tells the OS the maximum number of completed connections that can wait in the accept queue. If this queue gets full, new incoming connections might be politely rejected or dropped by the OS until space frees up. **When you call `listen()`, you are instructing the OS to monitor traffic on the `serverSocket`'s bound IP address and port, specifically looking for new connection attempts (SYN packets) to initiate the handshake process and queue completed connections.**
 
